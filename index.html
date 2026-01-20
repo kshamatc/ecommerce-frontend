@@ -6,7 +6,7 @@
     <title>E-Commerce Frontend</title>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="./styles/main.css">
 </head>
 
 <body>
@@ -15,7 +15,7 @@
 <header class="header">
     <div class="logo">E-Shop</div>
 
-    <nav class="nav">
+    <nav class="nav" id="navMenu">
         <a href="#">Home</a>
         <a href="#">Products</a>
         <a href="#">About</a>
@@ -30,7 +30,7 @@
             🛒 <span class="cart-count">0</span>
         </a>
 
-        <div class="hamburger">☰</div>
+        <div class="hamburger" id="hamburger">☰</div>
     </div>
 </header>
 
@@ -55,11 +55,12 @@
 <script>
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     const count = cart.reduce((sum, item) => sum + item.qty, 0);
-    document.querySelector(".cart-count").innerText = count;
+    const cartCount = document.querySelector(".cart-count");
+    if(cartCount) cartCount.innerText = count;
 </script>
 
 <!-- ================= PRODUCTS SCRIPT ================= -->
-<script src="scripts/app.js"></script>
+<script src="./scripts/app.js" defer></script>
 
 </body>
 </html>
