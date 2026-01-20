@@ -317,3 +317,78 @@ body {
     height: 180px;
     object-fit: contain;
 }
+
+.cart-page {
+    padding: 20px;
+}
+
+.cart-item {
+    display: flex;
+    gap: 15px;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+.cart-item img {
+    width: 80px;
+}
+
+.qty-controls button {
+    padding: 5px 10px;
+}
+
+.remove-btn {
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.btn {
+    padding: 10px 15px;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.primary {
+    background: black;
+    color: white;
+}
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.auth-box {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.auth-box input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+}
+
+.auth-box button {
+    width: 100%;
+    padding: 10px;
+    background: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.auth-box span {
+    color: blue;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
