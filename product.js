@@ -39,7 +39,7 @@ fetch(`https://fakestoreapi.com/products/${productId}`)
                 id: product.id,
                 title: product.title,
                 price: product.price,
-                qty: 1,
+                quantity: 1,
                 image: product.image
             
             });
@@ -52,4 +52,5 @@ fetch(`https://fakestoreapi.com/products/${productId}`)
 .catch(err => {
     productDetails.innerHTML = "<p>Failed to load product details.</p>";
     console.error(err);
+
 });
