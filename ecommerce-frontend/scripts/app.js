@@ -51,4 +51,41 @@ function displayProducts(products) {
   });
 }
 
+// ================= ADD TO CART FUNCTION =================
+function addToCart(productId) {
+  fetch(`https://fakestoreapi.com/products/${productId}`)
+    .then(res => res.json())
+    .then(product => {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
+      const existingItem = cart.find(item => item.id === product.id);
+
+      if(existingItem) {
+        existingItem.qty += 1;
+      }else {
+          cart.push({
+            id: product.id,
+            title: product.title,
+            price: product.price,
+            image: product.image,
+            qty:1
+          });
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+        updateCartCount();
+        alert("Product added to cart");
+    })
+    .catch(err => console.error("Add to cart failed", err));
+  }
+
+// ================= CART COUNT ==================
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const count = cart.reduce((sum, item) => sum + item.qty, 0);
+  const cartCount = document.querySelector(".cart-count");
+  if (cartCount) cartCount.innerText = count;
+}
+
+//Run once on page load
+updateCartCount();
