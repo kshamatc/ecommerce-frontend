@@ -33,7 +33,7 @@ function displayProducts(products) {
     card.className = "product-card";
 
     card.innerHTML = `
-      <a href="product.html?id=${product.id}" class="product-link">
+      <a href="product.html?id=${product.id}">View</a>
         <img 
           src="${product.image}" 
           alt="${product.title}" 
@@ -55,3 +55,4 @@ function displayProducts(products) {
 function addToCart(id) {
   alert("Product added to cart (ID: " + id + ")");
 }
+
